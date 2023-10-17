@@ -1,0 +1,27 @@
+## ****ES5 Global Constants****
+
+```jsx
+var PI = 3.14;
+PI = 42; // stop me from doing this!
+
+Use Const instead:
+const PI =3.14;
+```
+
+## ****ES2015 Global Constants****
+
+```jsx
+/* Write an ES2015 Version */
+
+```
+
+## **Quiz**
+
+- What is the difference between ***var*** and ***let***?
+	Var declares a variable globally; you can access a hoisted variable with var. Let declares a variable with block scope. Var can be used to redeclare a variable.  Let can only declare a variable once.  
+- What is the difference between **var** and ***const***?
+	Var can be used to redeclare a variable, and the variable can be assigned a new value.  Const can only be declared once, and it cannot be assigned a new value. Also var can be declared without initializing it with a value, whereas, const has to be initialized with a value upon declaration.  With var, you can access a hoisted variable, but const creates block scope.
+- What is the difference between **let** and **const**?
+	Let's value can be changed by assigning the variable to a new value.  Const value cannot be changed by setting it equal to a new value. 
+- What is hoisting?
+	Variables declared using var are "hoisted."  They 'declare' the value at the top of the scope of the code.  If accessed higher in the code before it is officially assigned a value, it will just return undefined as its value.
