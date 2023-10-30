@@ -1,0 +1,55 @@
+How Web Works Exercise
+Part One: Solidify Terminology
+In your own terms, define the following terms:
+•	What is HTTP?
+o	It stands for hypertext transfer protocol.  It is a standardized set of rules regarding sending information across the Internet.  It allows for communication between different servers. 
+•	What is a URL?
+o	It stands for uniform resource locator.  It is specific address for a particular resource on the Internet. 
+•	What is DNS?
+o	DNS stands for Domain Name System. It is the phone book of the internet.  It will take the URL address provided to it, and it will turn it into an IP address to send you to the correct resource. 
+•	What is a query string?
+o	A query string is a piece of a url attached at the end that specifies what particular resource is being searched for.  The server will use this information to direct you/your information to the correct resource. 
+•	What are two HTTP verbs and how are they different?
+o	Get- This is when information is requested from a server, but no data is actually changed. 
+o	Post- This is when information is sent/submitted to the server.  The server then accepts this information, if authorization is approved, and adds it to its data. 
+•	What is an HTTP request?
+o	It is when a url is entered that requests access to a resource on a server.  It is accompanied by a request line, http headers, and sometimes a message body, for example, if you are sending input data.
+•	What is an HTTP response?
+o	After an http request is made, a server will “answer” the request with its own response. It may provide the client with the resource, tell the client that the requested action was performed, or that an error occurred. 
+•	What is an HTTP header? Give a couple examples of request and response headers you have seen.
+o	This is information sent by the client and server that are not usually seen by the end-user.  It is behind the scenes information, for example the date the response was sent, information about the server that sent it, the language the content is in, or the type of content. 
+•	What are the processes that happen when you type “http://somesite.com/some/page.html” into a browser?
+o	Your browser looks up the IP address for the particular hosting domain.  It then connects with the server.  The Browser sends its HTTP request to the server, and then the server processes that requests and sends back its response. 
+Part Two: Practice Tools
+1.	Using curl, make a GET request to the icanhazdadjoke.com API to find all jokes involving the word “pirate”
+•	curl https://icanhazdadjoke.com/search?term=pirates
+•	Why are pirates called pirates? Because they arrr!
+•	Why do pirates not know the alphabet? They always get stuck at "C".
+2.	Use dig to find what the IP address is for icanhazdadjoke.com
+•	dig https://icanhazdadjoke.com/
+•	; <<>> DiG 9.18.12-0ubuntu0.22.04.3-Ubuntu <<>> https://icanhazdadjoke.com/
+•	;; global options: +cmd
+•	;; Got answer:
+•	;; ->>HEADER<<- opcode: QUERY, status: NXDOMAIN, id: 28293
+•	;; flags: qr rd ra ad; QUERY: 1, ANSWER: 0, AUTHORITY: 1, ADDITIONAL: 1
+•	;; OPT PSEUDOSECTION:
+•	; EDNS: version: 0, flags:; udp: 512
+•	;; QUESTION SECTION:
+•	;https://icanhazdadjoke.com/.   IN      A
+•	;; AUTHORITY SECTION:
+•	.                       10800   IN      SOA     a.root-servers.net. nstld.verisign-grs.com. 2023103000 1800 900 604800 86400
+•	;; Query time: 19 msec
+•	;; SERVER: 172.23.240.1#53(172.23.240.1) (UDP)
+•	;; WHEN: Mon Oct 30 12:07:01 EDT 2023
+•	;; MSG SIZE  rcvd: 131
+3.	Make a simple web page and serve it using python3 -m http.server. Visit the page in a browser.
+•	python3 -m http.server
+•	opened memory game using url: http://127.0.0.1:8000/
+Part Three: Explore Dev Tools
+Build a very simple HTML form that uses the GET method (it can use the same page URL for the action) when the form is submitted.
+Add a field or two to the form and, after submitting it, explore in Chrome Developer tools how you can view the request and response headers.
+Edit the page to change the form type to POST, refresh in the browser and re-submit. Do you still see the field in the query string? Explore in Chrome how you can view the request and response headers, as well as the form data.
+Part Four: Explore the URL API
+At times, it’s useful for your JavaScript to look at the URL of the browser window and change how the script works depending on parts of that (particularly the query string).
+Read about the URL API
+Try some of the code examples in the Chrome Console so that you can get comfortable with the basic methods and properties for instances of the URL class.
